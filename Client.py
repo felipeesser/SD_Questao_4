@@ -1,9 +1,17 @@
 import rpyc
-import sys
-if len(sys.argv) < 2:
-    sys.exit("Usage {} SERVER".format(sys.argv[0]))
-server = sys.argv[1]
-conn = rpyc.connect(server,18861)
-print(conn)
-print(conn.root.exposed_get_answer())
-print(conn.root.exposed_the_real_answer_though)
+
+# pede ao usuário o tamanho do vetor
+n = int(input("Digite o tamanho do vetor: "))
+
+# cria o vetor com elementos variando de 0 a n-1
+vetor = list(range(n))
+# imprime o vetor
+print(vetor)
+# conecta ao servidor localmente
+conn = rpyc.connect("localhost", 18861)
+
+# chama o método remoto para calcular a soma do vetor
+soma = conn.root.soma_vetor(vetor)
+
+# imprime a soma
+print("A soma dos elementos do vetor é:", soma)
