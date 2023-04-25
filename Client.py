@@ -5,5 +5,5 @@ if len(sys.argv) < 2:
 server = sys.argv[1]
 conn = rpyc.connect(server,18861)
 print(conn)
-print(conn.root.exposed_get_answer())
-print(conn.root.exposed_the_real_answer_though)
+print(conn.root.get_answer())
+print(conn.root.the_real_answer_though)
