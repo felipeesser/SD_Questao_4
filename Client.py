@@ -1,9 +1,8 @@
 import rpyc
 import sys
+import os
 if len(sys.argv) < 2:
-    sys.exit("Usage {} SERVER".format(sys.argv[0]))
+    exit("Usage {} SERVER".format(sys.argv[0]))
 server = sys.argv[1]
 conn = rpyc.connect(server,18861)
-print(conn)
-print(conn.root.get_answer())
-print(conn.root.the_real_answer_though)
+print(conn.root.get_question)
