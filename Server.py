@@ -3,11 +3,11 @@ class MyService(rpyc.Service):
     def on_connect(self, conn):
         # código que é executado quando uma conexão é iniciada, caso
         # seja necessário
-        pass
+        print("Conexão estabelecida")
     def on_disconnect(self, conn):
         # código que é executado quando uma conexão é finalizada,
         # caso seja necessário
-        pass
+        print("Conexão encerrada")
     def exposed_get_answer(self): # este é um método exposto
         return 42
     exposed_the_real_answer_though = 43 # este é um atributo exposto
