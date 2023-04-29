@@ -1,4 +1,5 @@
 import rpyc
+
 class MyService(rpyc.Service):
     def on_connect(self, conn):
         # código que é executado quando uma conexão é iniciada, caso
@@ -17,4 +18,5 @@ class MyService(rpyc.Service):
 if __name__ == "__main__":
     from rpyc.utils.server import ThreadedServer
     t = ThreadedServer(MyService, port=18861)
+    print("Servidor aberto...")
     t.start()
